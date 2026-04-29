@@ -1,0 +1,28 @@
+spring:
+  ai:
+    openai:
+      api-key: test-key-not-used
+
+app:
+  api-server:
+    base-url: http://localhost:8081
+  models:
+    parser: gpt-5-mini
+    recommender: gpt-4o-mini
+  fuzzy:
+    top-n: 5
+    min-score: 60
+  dummy-mode:
+    enabled: true
+
+retry:
+  api-server:
+    max-attempts: 3
+    backoff:
+      delay-ms: 500
+      multiplier: 2.0
+  openai:
+    max-attempts: 4
+    backoff:
+      delay-ms: 1000
+      multiplier: 2.0
