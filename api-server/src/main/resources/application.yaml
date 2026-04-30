@@ -11,6 +11,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
+  data:
+    web:
+      pageable:
+        default-page-size: 50
+        max-page-size: 100
+        one-indexed-parameters: true
   sql:
     init:
       mode: always
