@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Recommender — Results</title>
+</head>
+<body>
+<h2>Based on your grocery list, here are my recommendations:</h2>
+<p th:text="${content.filename}"/>
+<p th:text="${content.content}"/>
+
+<p/><a href="/">Upload another list</a>
+
+</body>
+</html>

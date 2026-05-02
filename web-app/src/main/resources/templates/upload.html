@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Recommender — Upload</title>
+</head>
+<body>
+
+<div th:if="${message}">
+    <h4 style="color:red" th:text="${message}"/>
+</div>
+
+<h1>Upload your grocery list</h1>
+<p>Upload a plain text file (.txt) containing your grocery list, one item per line.</p>
+
+<form method="POST" action="/recommender" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".txt" required />
+    <button type="submit">Get Recommendations</button>
+</form>
+
+<p>
+    <b><i>Sample file:</i></b><br />
+    <code>list.txt</code><i> containing: </i><br />
+    <label>
+        <textarea rows="3" cols="20">3 packs of milk		1 bag of sugar</textarea>
+    </label>
+</p>
+
+</body>
+</html>
