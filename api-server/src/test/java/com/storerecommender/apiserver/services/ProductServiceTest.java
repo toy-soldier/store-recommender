@@ -31,7 +31,7 @@ class ProductServiceTest {
     @Mock
     private ProductRepository productRepository;
     @Spy
-    private ProductMapper                                                                                                                                                                                productMapper;
+    private ProductMapper productMapper;
     @InjectMocks
     private ProductService productService;
 
