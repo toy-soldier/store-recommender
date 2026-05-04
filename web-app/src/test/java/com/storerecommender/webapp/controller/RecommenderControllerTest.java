@@ -41,10 +41,9 @@ class RecommenderControllerTest {
         var bytes = new ClassPathResource("test_files/" + filename).getInputStream().readAllBytes();
         var content = new String(bytes, StandardCharsets.UTF_8).trim();
 
-        var recommendations = FinalRecommendations.builder()
-                .filename(filename)
-                .content(content)
-                .build();
+        var recommendations = new FinalRecommendations();
+        recommendations.setFilename(filename);
+        recommendations.setContent(content);
         when(agentService.getFinalRecommendations(eq(filename), anyString()))
                 .thenReturn(recommendations);
 

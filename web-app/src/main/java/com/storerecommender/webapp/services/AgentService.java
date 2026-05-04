@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AgentService {
     public FinalRecommendations getFinalRecommendations(String filename, String content) {
-        return FinalRecommendations.builder()
-                .filename(filename)
-                .content(content)
-                .build();
+        var recommendations = new FinalRecommendations();
+        recommendations.setFilename(filename);
+        recommendations.setContent(content);
+        return recommendations;
     }
 }
