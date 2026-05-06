@@ -10,8 +10,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.nio.charset.StandardCharsets;
-
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
@@ -39,11 +37,8 @@ class RecommenderControllerTest {
     void postRecommenderWithValidFileReturnsRecommendationsView() throws Exception {
         var filename = "list.txt";
         var bytes = new ClassPathResource("test_files/" + filename).getInputStream().readAllBytes();
-        var content = new String(bytes, StandardCharsets.UTF_8).trim();
 
-        var recommendations = new FinalRecommendations();
-        recommendations.setFilename(filename);
-        recommendations.setContent(content);
+        var recommendations = new FinalRecommendations(null);
         when(agentService.getFinalRecommendations(eq(filename), anyString()))
                 .thenReturn(recommendations);
 

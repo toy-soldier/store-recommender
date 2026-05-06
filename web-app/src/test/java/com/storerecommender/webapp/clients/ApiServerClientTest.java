@@ -44,9 +44,9 @@ class ApiServerClientTest {
 
     @Test
     void getProductReturnsEnrichedSuggestionWithNullConfidence() throws Exception {
-        var suggestion = new EnrichedSuggestion(
-                1001, "Name", "Brand", "Category",
-                new BigDecimal("2.99"), 50, null);
+        var suggestion = EnrichedSuggestion.builder()
+                .sku(1001).name("Name").brand("Brand").category("Category")
+                .price(BigDecimal.valueOf(2.99)).stock(50).build();
 
         server.expect(requestTo(BASE_URL + "/api/v1/products/1001"))
                 .andExpect(method(HttpMethod.GET))
