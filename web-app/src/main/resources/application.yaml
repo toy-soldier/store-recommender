@@ -20,6 +20,8 @@ app:
   fuzzy:
     top-n: 5
     min-score: 60
+  inventory:
+    load-on-startup: true
   dummy-mode:
     enabled: false
     grocery-lists: classpath:dummy/grocery-lists/

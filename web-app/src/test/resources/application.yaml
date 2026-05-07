@@ -12,6 +12,8 @@ app:
   fuzzy:
     top-n: 5
     min-score: 60
+  inventory:
+    load-on-startup: false
   dummy-mode:
     enabled: true
 

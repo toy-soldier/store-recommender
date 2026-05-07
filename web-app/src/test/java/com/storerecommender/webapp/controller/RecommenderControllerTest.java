@@ -1,6 +1,6 @@
 package com.storerecommender.webapp.controller;
 
-import com.storerecommender.webapp.schemas.FinalRecommendations;
+import com.storerecommender.webapp.schemas.*;
 import com.storerecommender.webapp.services.AgentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,10 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
@@ -70,5 +74,37 @@ class RecommenderControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("upload"))
                 .andExpect(model().attribute("message", "Please select a non-empty file."));
+    }
+
+    @Test
+    void postRecommenderRendersRecommendationsCorrectly() throws Exception {
+        var filename = "list.txt";
+        var bytes = new ClassPathResource("test_files/" + filename).getInputStream().readAllBytes();
+
+        var highConf = EnrichedSuggestion.builder().sku(1001).brand("Brand A").name("Whole Milk")
+                .category("Dairy").price(new BigDecimal("3.99")).stock(5).confidence(90).build();
+        var midConf = EnrichedSuggestion.builder().sku(1002).brand("Brand B").name("Semi-Skimmed Milk")
+                .category("Dairy").price(new BigDecimal("2.99")).stock(3).confidence(70).build();
+        var lowConf = EnrichedSuggestion.builder().sku(1003).brand("Brand C").name("Oat Milk")
+                .category("Dairy").price(new BigDecimal("4.49")).stock(2).confidence(50).build();
+
+        var lineItem = new EnrichedSuggestionsPerGroceryListLineItem("milk", List.of(highConf, midConf, lowConf));
+        var recommendations = new FinalRecommendations(List.of(lineItem));
+
+        when(agentService.getFinalRecommendations(eq(filename), anyString()))
+                .thenReturn(recommendations);
+
+        var file = new MockMultipartFile("file", filename, "text/plain", bytes);
+
+        mockMvc.perform(multipart("/recommender").file(file))
+                .andExpect(status().isOk())
+                .andExpect(view().name("recommendations"))
+                .andExpect(content().string(containsString("For your requirement `milk`...")))
+                .andExpect(content().string(containsString("Highly recommended!")))
+                .andExpect(content().string(containsString("Recommended")))
+                .andExpect(content().string(containsString("You may also like...")))
+                .andExpect(content().string(containsString("Brand A Whole Milk (at $3.99 per unit)")))
+                .andExpect(content().string(containsString("Brand B Semi-Skimmed Milk (at $2.99 per unit)")))
+                .andExpect(content().string(containsString("Brand C Oat Milk (at $4.49 per unit)")));
     }
 }

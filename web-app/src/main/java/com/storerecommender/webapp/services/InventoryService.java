@@ -2,7 +2,9 @@ package com.storerecommender.webapp.services;
 
 import com.storerecommender.webapp.clients.ApiServerClient;
 import com.storerecommender.webapp.schemas.*;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ import java.util.List;
 public class InventoryService {
     private final ApiServerClient apiServerClient;
     private final ProductInventory productInventory;
+
+    @Value("${app.inventory.load-on-startup:true}")
+    private boolean loadOnStartup = true;
 
     public InventoryService(ApiServerClient apiServerClient) {
         this.apiServerClient = apiServerClient;
@@ -42,7 +47,9 @@ public class InventoryService {
         return new FinalRecommendations(finalList);
     }
 
+    @PostConstruct
     public void getInventoryFromApiServer() {
+        if (!loadOnStartup) return;
         log.info("Getting inventory from API server");
         try {
             productInventory.getInventory().clear();

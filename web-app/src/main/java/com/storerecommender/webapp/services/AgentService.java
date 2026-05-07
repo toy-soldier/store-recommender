@@ -1,29 +1,25 @@
 package com.storerecommender.webapp.services;
 
-import com.storerecommender.webapp.schemas.FinalRecommendations;
-import com.storerecommender.webapp.schemas.LlmFinalSuggestions;
-import com.storerecommender.webapp.schemas.LlmSuggestion;
-import com.storerecommender.webapp.schemas.LlmSuggestionsPerGroceryListLineItem;
+import com.storerecommender.webapp.schemas.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Slf4j
 @Service
 @AllArgsConstructor
 public class AgentService {
     private final InventoryService inventoryService;
+    private final FuzzyFilterService fuzzyFilterService;
+    private final ParserService parserService;
+    private final RecommenderService recommenderService;
 
     public FinalRecommendations getFinalRecommendations(String filename, String content) {
-        LlmSuggestion s1 = new LlmSuggestion(1001, "yyy",94);
-        LlmSuggestion s2 = new LlmSuggestion(1002, "zzz", 98);
-        LlmSuggestionsPerGroceryListLineItem perGroceryListLineItem = new LlmSuggestionsPerGroceryListLineItem(
-                "milk", List.of(s1, s2));
-        LlmFinalSuggestions finalSuggestions = new LlmFinalSuggestions();
-        finalSuggestions.setList(List.of(perGroceryListLineItem));
-        var recommendations = inventoryService.generateFinalRecommendations(finalSuggestions);
-        return recommendations;
+        ParsedGroceryList parsedList = parserService.parseList(filename, content);
+        InputsForFuzzyMatching inputs = new InputsForFuzzyMatching(
+                inventoryService.getCachedInventory(), parsedList);
+        PrunedInventory pruned = fuzzyFilterService.pruneInventory(inputs);
+        LlmFinalSuggestions finalSuggestions = recommenderService.recommendProducts(filename, pruned);
+        return inventoryService.generateFinalRecommendations(finalSuggestions);
     }
 }

@@ -6,9 +6,30 @@
 </head>
 <body>
 <h2>Based on your grocery list, here are my recommendations:</h2>
-<p th:text="${content}"/>
 
-<p/><a href="/">Upload another list</a>
+<div th:each="lineItem : ${content.list}">
+    <h4 th:text="'For your requirement `' + ${lineItem.query} + '`...'"></h4>
+    <div th:each="suggestion : ${lineItem.list}">
+        <p>
+            <span th:style="${suggestion.confidence >= 85 ? 'color:green' : (suggestion.confidence >= 60 ? 'color:orange' : 'color:red')}">
+                <b><i th:text="${suggestion.confidence >= 85 ? 'Highly recommended!' : (suggestion.confidence >= 60 ? 'Recommended' : 'You may also like...')}"></i></b>
+            </span><br/>
+            <input type="checkbox" th:id="${suggestion.sku}" th:value="${suggestion.sku}" name="sku"/>
+            <label th:for="${suggestion.sku}">
+                <select th:name="'qty_' + ${suggestion.sku}">
+                    <option th:each="i : ${#numbers.sequence(1, 10)}"
+                            th:value="${i}"
+                            th:text="${i}"
+                            th:selected="${i == suggestion.stock}">
+                    </option>
+                </select>
+                <span th:text="${suggestion.brand + ' ' + suggestion.name + ' (at $' + suggestion.price + ' per unit)'}"></span>
+            </label>
+        </p>
+    </div>
+</div>
+
+<p><a href="/">Upload another list</a></p>
 
 </body>
 </html>
