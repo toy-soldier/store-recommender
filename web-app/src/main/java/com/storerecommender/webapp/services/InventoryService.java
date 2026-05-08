@@ -15,12 +15,12 @@ import java.util.List;
 public class InventoryService {
     private final ApiServerClient apiServerClient;
     private final ProductInventory productInventory;
+    private final boolean loadOnStartup;
 
-    @Value("${app.inventory.load-on-startup:true}")
-    private boolean loadOnStartup = true;
-
-    public InventoryService(ApiServerClient apiServerClient) {
+    public InventoryService(ApiServerClient apiServerClient,
+                            @Value("${app.inventory.load-on-startup}") boolean loadOnStartup) {
         this.apiServerClient = apiServerClient;
+        this.loadOnStartup = loadOnStartup;
         this.productInventory = new ProductInventory();
         log.info("Inventory service initialized");
     }
