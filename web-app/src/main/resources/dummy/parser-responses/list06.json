@@ -1,0 +1,23 @@
+{
+  "list" : [ {
+    "query" : "1 kilo chicken wings",
+    "product" : "chicken wings",
+    "quantity" : 1.0,
+    "unit" : "kilo"
+  }, {
+    "query" : "500g beef, ground",
+    "product" : "beef, ground",
+    "quantity" : 500.0,
+    "unit" : "g"
+  }, {
+    "query" : "1 kilo hotdogs",
+    "product" : "hotdogs",
+    "quantity" : 1.0,
+    "unit" : "kilo"
+  }, {
+    "query" : "5 packks of ham",
+    "product" : "ham",
+    "quantity" : 5.0,
+    "unit" : "packks"
+  } ]
+}

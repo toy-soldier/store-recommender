@@ -1,0 +1,89 @@
+{
+  "list" : [ {
+    "query" : "carrots",
+    "list" : [ {
+      "sku" : 1015,
+      "description" : "Grimmway Farms Carrots 1lb Bag",
+      "confidence" : 90
+    }, {
+      "sku" : 1053,
+      "description" : "Bolthouse Baby Carrots 16oz",
+      "confidence" : 80
+    } ]
+  }, {
+    "query" : "brokoli",
+    "list" : [ {
+      "sku" : 1051,
+      "description" : "Fresh Broccoli Crown 1lb",
+      "confidence" : 90
+    }, {
+      "sku" : 1166,
+      "description" : "Birds Eye Frozen Broccoli Florets 12oz",
+      "confidence" : 70
+    } ]
+  }, {
+    "query" : "cauliflower",
+    "list" : [ {
+      "sku" : 1052,
+      "description" : "Fresh Cauliflower Head",
+      "confidence" : 95
+    } ]
+  }, {
+    "query" : "corn",
+    "list" : [ {
+      "sku" : 1088,
+      "description" : "Fresh Corn on the Cob 4ct",
+      "confidence" : 85
+    }, {
+      "sku" : 1168,
+      "description" : "Green Giant Frozen Corn 16oz",
+      "confidence" : 75
+    }, {
+      "sku" : 1105,
+      "description" : "Mission Corn Tortillas 30ct",
+      "confidence" : 70
+    }, {
+      "sku" : 1232,
+      "description" : "Kelloggs Corn Flakes 18oz",
+      "confidence" : 60
+    }, {
+      "sku" : 1130,
+      "description" : "Orville Microwave Popcorn 3pk",
+      "confidence" : 50
+    } ]
+  }, {
+    "query" : "cabbage",
+    "list" : [ {
+      "sku" : 1091,
+      "description" : "Thomas Bagels Plain 6ct",
+      "confidence" : 30
+    }, {
+      "sku" : 1092,
+      "description" : "Thomas Bagels Everything 6ct",
+      "confidence" : 30
+    }, {
+      "sku" : 1253,
+      "description" : "Clabber Girl Baking Powder 8.1oz",
+      "confidence" : 20
+    } ]
+  }, {
+    "query" : "tomatoes",
+    "list" : [ {
+      "sku" : 1012,
+      "description" : "Local Farm Roma Tomatoes 1lb",
+      "confidence" : 90
+    }, {
+      "sku" : 1072,
+      "description" : "Fresh Cherry Tomatoes 1pt",
+      "confidence" : 80
+    }, {
+      "sku" : 1192,
+      "description" : "Hunts Diced Tomatoes 14.5oz",
+      "confidence" : 70
+    }, {
+      "sku" : 1196,
+      "description" : "Campbells Tomato Soup 10.75oz",
+      "confidence" : 60
+    } ]
+  } ]
+}

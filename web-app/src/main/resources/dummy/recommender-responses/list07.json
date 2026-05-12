@@ -1,0 +1,55 @@
+{
+  "list" : [ {
+    "query" : "12 packs of yoghurt",
+    "list" : [ {
+      "sku" : 1007,
+      "description" : "Fage Greek Yogurt Plain 32oz",
+      "confidence" : 80
+    }, {
+      "sku" : 1042,
+      "description" : "Chobani Vanilla Yogurt 32oz",
+      "confidence" : 75
+    }, {
+      "sku" : 1043,
+      "description" : "Yoplait Strawberry Yogurt 6oz",
+      "confidence" : 70
+    } ]
+  }, {
+    "query" : "4l of water",
+    "list" : [ {
+      "sku" : 1021,
+      "description" : "LaCroix Sparkling Water 12pk",
+      "confidence" : 85
+    }, {
+      "sku" : 1118,
+      "description" : "LaCroix Sparkling Water Lemon 12pk",
+      "confidence" : 80
+    }, {
+      "sku" : 1125,
+      "description" : "LaCroix Sparkling Water Grapefruit 12pk",
+      "confidence" : 75
+    } ]
+  }, {
+    "query" : "1 tuna in can",
+    "list" : [ {
+      "sku" : 1208,
+      "description" : "StarKist Tuna 5oz",
+      "confidence" : 90
+    } ]
+  }, {
+    "query" : "four apple",
+    "list" : [ {
+      "sku" : 1010,
+      "description" : "SunFresh Gala Apples 3lb Bag",
+      "confidence" : 85
+    }, {
+      "sku" : 1020,
+      "description" : "Motts Apple Juice 64oz",
+      "confidence" : 70
+    }, {
+      "sku" : 1079,
+      "description" : "Fresh Pineapple",
+      "confidence" : 60
+    } ]
+  } ]
+}

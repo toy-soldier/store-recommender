@@ -1,0 +1,59 @@
+{
+  "list" : [ {
+    "query" : "bananas",
+    "list" : [ {
+      "sku" : 1009,
+      "description" : "Chiquita Bananas 3lb Bunch",
+      "confidence" : 95
+    } ]
+  }, {
+    "query" : "mangoes",
+    "list" : [ {
+      "sku" : 1078,
+      "description" : "Fresh Mango",
+      "confidence" : 90
+    }, {
+      "sku" : 1011,
+      "description" : "Sunkist Navel Oranges 4lb Bag",
+      "confidence" : 70
+    }, {
+      "sku" : 1072,
+      "description" : "Fresh Cherry Tomatoes 1pt",
+      "confidence" : 60
+    }, {
+      "sku" : 1012,
+      "description" : "Local Farm Roma Tomatoes 1lb",
+      "confidence" : 60
+    }, {
+      "sku" : 1192,
+      "description" : "Hunts Diced Tomatoes 14.5oz",
+      "confidence" : 50
+    } ]
+  }, {
+    "query" : "strawberrys",
+    "list" : [ {
+      "sku" : 1066,
+      "description" : "Driscolls Strawberries 1lb",
+      "confidence" : 90
+    }, {
+      "sku" : 1043,
+      "description" : "Yoplait Strawberry Yogurt 6oz",
+      "confidence" : 70
+    }, {
+      "sku" : 1214,
+      "description" : "Smuckers Strawberry Jam 18oz",
+      "confidence" : 60
+    } ]
+  }, {
+    "query" : "orange",
+    "list" : [ {
+      "sku" : 1011,
+      "description" : "Sunkist Navel Oranges 4lb Bag",
+      "confidence" : 90
+    }, {
+      "sku" : 1019,
+      "description" : "Tropicana Orange Juice 52oz",
+      "confidence" : 80
+    } ]
+  } ]
+}

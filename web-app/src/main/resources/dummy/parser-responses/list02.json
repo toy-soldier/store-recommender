@@ -1,0 +1,23 @@
+{
+  "list" : [ {
+    "query" : "popcorn, 5",
+    "product" : "popcorn",
+    "quantity" : 5.0,
+    "unit" : null
+  }, {
+    "query" : "3 cookies",
+    "product" : "cookies",
+    "quantity" : 3.0,
+    "unit" : null
+  }, {
+    "query" : "6 cans of cola",
+    "product" : "cola",
+    "quantity" : 6.0,
+    "unit" : "cans"
+  }, {
+    "query" : "4 bottles of orange juice",
+    "product" : "orange juice",
+    "quantity" : 4.0,
+    "unit" : "bottles"
+  } ]
+}

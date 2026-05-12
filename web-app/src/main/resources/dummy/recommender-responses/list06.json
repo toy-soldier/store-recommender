@@ -1,0 +1,27 @@
+{
+  "list" : [ {
+    "query" : "1 kilo chicken wings",
+    "list" : [ ]
+  }, {
+    "query" : "500g beef, ground",
+    "list" : [ {
+      "sku" : 1026,
+      "description" : "Lauras Lean Ground Beef 80/20 1lb",
+      "confidence" : 85
+    } ]
+  }, {
+    "query" : "1 kilo hotdogs",
+    "list" : [ {
+      "sku" : 1154,
+      "description" : "Ball Park Hot Dogs 8ct",
+      "confidence" : 90
+    } ]
+  }, {
+    "query" : "5 packks of ham",
+    "list" : [ {
+      "sku" : 1149,
+      "description" : "Boars Head Ham Deli 1lb",
+      "confidence" : 80
+    } ]
+  } ]
+}

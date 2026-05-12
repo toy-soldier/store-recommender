@@ -1,0 +1,35 @@
+{
+  "list" : [ {
+    "query" : "popcorn, 5",
+    "list" : [ {
+      "sku" : 1130,
+      "description" : "Orville Microwave Popcorn 3pk",
+      "confidence" : 90
+    } ]
+  }, {
+    "query" : "3 cookies",
+    "list" : [ {
+      "sku" : 1141,
+      "description" : "Chips Ahoy Chocolate Chip Cookies 13oz",
+      "confidence" : 85
+    } ]
+  }, {
+    "query" : "6 cans of cola",
+    "list" : [ {
+      "sku" : 1111,
+      "description" : "Coca-Cola Cola 2L",
+      "confidence" : 80
+    }, {
+      "sku" : 1112,
+      "description" : "Coca-Cola Diet Cola 2L",
+      "confidence" : 75
+    } ]
+  }, {
+    "query" : "4 bottles of orange juice",
+    "list" : [ {
+      "sku" : 1019,
+      "description" : "Tropicana Orange Juice 52oz",
+      "confidence" : 90
+    } ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "list" : [ {
+    "query" : "bananas",
+    "product" : "bananas",
+    "quantity" : null,
+    "unit" : null
+  }, {
+    "query" : "mangoes",
+    "product" : "mangoes",
+    "quantity" : null,
+    "unit" : null
+  }, {
+    "query" : "strawberrys",
+    "product" : "strawberrys",
+    "quantity" : null,
+    "unit" : null
+  }, {
+    "query" : "orange",
+    "product" : "orange",
+    "quantity" : null,
+    "unit" : null
+  } ]
+}

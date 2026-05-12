@@ -1,0 +1,36 @@
+{
+  "list" : [ {
+    "query" : "3 cans sardines",
+    "list" : [ {
+      "sku" : 1210,
+      "description" : "King Oscar Sardines 3.75oz",
+      "confidence" : 95
+    } ]
+  }, {
+    "query" : "1 loaf of bread",
+    "list" : [ {
+      "sku" : 1016,
+      "description" : "Wonder White Sandwich Bread 20oz",
+      "confidence" : 90
+    }, {
+      "sku" : 1017,
+      "description" : "Natures Own Whole Wheat Bread 20oz",
+      "confidence" : 85
+    }, {
+      "sku" : 1018,
+      "description" : "Boudin Sourdough Bread Loaf",
+      "confidence" : 80
+    }, {
+      "sku" : 1099,
+      "description" : "Pepperidge Farm Rye Bread 24oz",
+      "confidence" : 75
+    }, {
+      "sku" : 1101,
+      "description" : "Daves Killer Multigrain Bread 20oz",
+      "confidence" : 70
+    } ]
+  }, {
+    "query" : "fresh lemonade",
+    "list" : [ ]
+  } ]
+}

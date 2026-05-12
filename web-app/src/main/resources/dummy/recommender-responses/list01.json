@@ -1,0 +1,37 @@
+{
+  "list" : [ {
+    "query" : "3 packs of milk",
+    "list" : [ {
+      "sku" : 1001,
+      "description" : "Meadowbrook Whole Milk 1 Gallon",
+      "confidence" : 94
+    }, {
+      "sku" : 1050,
+      "description" : "Horizon Chocolate Milk 1 Gallon",
+      "confidence" : 70
+    }, {
+      "sku" : 1002,
+      "description" : "Meadowbrook Skim Milk 1 Gallon",
+      "confidence" : 65
+    }, {
+      "sku" : 1040,
+      "description" : "Oatly Oat Milk 64oz",
+      "confidence" : 60
+    } ]
+  }, {
+    "query" : "1 bag of sugar",
+    "list" : [ {
+      "sku" : 1250,
+      "description" : "Domino Sugar Granulated 4lb",
+      "confidence" : 90
+    }, {
+      "sku" : 1251,
+      "description" : "Domino Brown Sugar 2lb",
+      "confidence" : 80
+    }, {
+      "sku" : 1314,
+      "description" : "Domino Powdered Sugar 2lb",
+      "confidence" : 75
+    } ]
+  } ]
+}

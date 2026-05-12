@@ -1,0 +1,18 @@
+{
+  "list" : [ {
+    "query" : "3 cans sardines",
+    "product" : "sardines",
+    "quantity" : 3.0,
+    "unit" : "cans"
+  }, {
+    "query" : "1 loaf of bread",
+    "product" : "bread",
+    "quantity" : 1.0,
+    "unit" : "loaf"
+  }, {
+    "query" : "fresh lemonade",
+    "product" : "fresh lemonade",
+    "quantity" : null,
+    "unit" : null
+  } ]
+}

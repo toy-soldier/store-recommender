@@ -1,0 +1,23 @@
+{
+  "list" : [ {
+    "query" : "12 packs of yoghurt",
+    "product" : "yoghurt",
+    "quantity" : 12.0,
+    "unit" : "packs"
+  }, {
+    "query" : "4l of water",
+    "product" : "water",
+    "quantity" : 4.0,
+    "unit" : "l"
+  }, {
+    "query" : "1 tuna in can",
+    "product" : "tuna in can",
+    "quantity" : 1.0,
+    "unit" : null
+  }, {
+    "query" : "four apple",
+    "product" : "apple",
+    "quantity" : null,
+    "unit" : null
+  } ]
+}
