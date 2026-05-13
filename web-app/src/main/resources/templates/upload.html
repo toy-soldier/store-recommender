@@ -13,10 +13,20 @@
 <h1>Upload your grocery list</h1>
 <p>Upload a plain text file (.txt) containing your grocery list, one item per line.</p>
 
-<form method="POST" action="/recommender" enctype="multipart/form-data">
+<form method="POST" action="/recommender" enctype="multipart/form-data" onsubmit="handleSubmit()">
     <input type="file" name="file" accept=".txt" required />
-    <button type="submit">Get Recommendations</button>
+    <button type="submit" id="submitBtn">Get Recommendations</button>
+    <span id="processingMsg" style="display:none; margin-left:10px;"><i>Processing, please wait...</i></span>
 </form>
+
+<script>
+    function handleSubmit() {
+        const btn = document.getElementById('submitBtn');
+        const msg = document.getElementById('processingMsg');
+        btn.disabled = true;
+        msg.style.display = 'inline';
+    }
+</script>
 
 <p>
     <b><i>Sample file:</i></b><br />

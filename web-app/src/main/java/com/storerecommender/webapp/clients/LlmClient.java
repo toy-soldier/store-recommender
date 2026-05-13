@@ -27,7 +27,7 @@ public class LlmClient {
     public <T> T call(String prompt, String model, Class<T> responseType) {
         log.debug("Calling LLM with model {}", model);
         return chatClient.prompt()
-                .options(OpenAiChatOptions.builder().model(model).build())
+                .options(OpenAiChatOptions.builder().model(model).temperature(0.0).build())
                 .user(prompt)
                 .call()
                 .entity(responseType);

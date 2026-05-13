@@ -15,16 +15,17 @@ app:
   api-server:
     base-url: http://localhost:8081
   models:
-    parser: gpt-5-mini
+    parser: gpt-4.1-mini-2025-04-14
     recommender: gpt-4o-mini
+  prompts:
+    parser: classpath:prompts/parser_prompt.txt
+    recommender: classpath:prompts/recommender_prompt.txt
   fuzzy:
     top-n: 5
     min-score: 60
   inventory:
     load-on-startup: true
   dummy-mode:
-    enabled: false
-    grocery-lists: classpath:dummy/grocery-lists/
     parser-responses: classpath:dummy/parser-responses/
     recommender-responses: classpath:dummy/recommender-responses/
 
